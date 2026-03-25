@@ -1,0 +1,16 @@
+{
+  "name": "pw2-funcao-main",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000p\u0000w\u00002\u0000-\u0000f\u0000u\u0000n\u0000c\u0000a\u0000o\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1",
+    "nodemon": "^3.1.14"
+  }
+}
