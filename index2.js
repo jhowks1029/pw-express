@@ -3,7 +3,6 @@ import express from "express"
 
 //--------------------
 
-
 //import local
 
 //aritmetricas
@@ -49,7 +48,6 @@ import { remover } from "./vetores/remover.js";
 
 //------------------
 
-
 const app = express();
 
 app.get("/", (req, res) => {
@@ -60,127 +58,200 @@ app.get("/json", (req, res) => {
     res.json({ nome: "Jhonata", idade: 18 });
 });
 
+//------------------
+// ARITMETICAS
+
+app.get("/soma/:a/:b", (req, res) => {
+    const { a, b } = req.params;
+    const resultado = soma(Number(a), Number(b));
+    res.json(`Resultado: ${resultado}`);
+});
+
+app.get("/dividir/:a/:b", (req, res) => {
+    const { a, b } = req.params;
+    const resultado = divisao(Number(a), Number(b));
+    res.json(`Resultado: ${resultado}`);
+});
+
+app.get("/multiplicacao/:a/:b", (req, res) => {
+    const { a, b } = req.params;
+    const resultado = multiplicacao(Number(a), Number(b));
+    res.json(`Resultado: ${resultado}`);
+});
+
+app.get("/potencia/:a/:b", (req, res) => {
+    const { a, b } = req.params;
+    const resultado = potencia(Number(a), Number(b));
+    res.json(`Resultado: ${resultado}`);
+});
+
+app.get("/raiz/:a/:b", (req, res) => {
+    const { a, b } = req.params;
+    const resultado = raiz(Number(a), Number(b));
+    res.json(`Resultado: ${resultado}`);
+});
+
+app.get("/resto/:a/:b", (req, res) => {
+    const { a, b } = req.params;
+    const resultado = resto(Number(a), Number(b));
+    res.json(`Resultado: ${resultado}`);
+});
+
+app.get("/subtracao/:a/:b", (req, res) => {
+    const { a, b } = req.params;
+    const resultado = subtracao(Number(a), Number(b));
+    res.json(`Resultado: ${resultado}`);
+});
+
+//------------------
+// CONDICIONAIS
+
+app.get("/ifcomposto/:a/:b", (req, res) => {
+    const { a, b } = req.params;
+    const resultado = ifComposto(Number(a), Number(b));
+    res.json(`Resultado: ${resultado}`);
+});
+
+app.get("/ifsimples/:a/:b", (req, res) => {
+    const { a, b } = req.params;
+    const resultado = ifSimples(Number(a), Number(b));
+    res.json(`Resultado: ${resultado}`);
+});
+
+app.get("/switchcase/:a/:b", (req, res) => {
+    const { a, b } = req.params;
+    const resultado = switchCase(Number(a), Number(b));
+    res.json(`Resultado: ${resultado}`);
+});
+
+app.get("/ternario/:a/:b", (req, res) => {
+    const { a, b } = req.params;
+    const resultado = ternario(Number(a), Number(b));
+    res.json(`Resultado: ${resultado}`);
+});
+
+//------------------
+// LACOS
+
+app.get("/dowhile/:a/:b", (req, res) => {
+    const { a, b } = req.params;
+    const resultado = doWhile(Number(a), Number(b));
+    res.json(`Resultado: ${resultado}`);
+});
+
+app.get("/foreach/:a/:b", (req, res) => {
+    const { a, b } = req.params;
+    const resultado = forEachFunc(Number(a), Number(b));
+    res.json(`Resultado: ${resultado}`);
+});
+
+app.get("/forloop/:a/:b", (req, res) => {
+    const { a, b } = req.params;
+    const resultado = forLoop(Number(a), Number(b));
+    res.json(`Resultado: ${resultado}`);
+});
+
+app.get("/map/:a/:b", (req, res) => {
+    const { a, b } = req.params;
+    const resultado = mapFunc(Number(a), Number(b));
+    res.json(`Resultado: ${resultado}`);
+});
+
+app.get("/whileloop/:a/:b", (req, res) => {
+    const { a, b } = req.params;
+    const resultado = whileLoop(Number(a), Number(b));
+    res.json(`Resultado: ${resultado}`);
+});
+
+//------------------
+// LOGICOS
+
+app.get("/and/:a/:b", (req, res) => {
+    const { a, b } = req.params;
+    const resultado = and(Number(a), Number(b));
+    res.json(`Resultado: ${resultado}`);
+});
+
+app.get("/not/:a/:b", (req, res) => {
+    const { a, b } = req.params;
+    const resultado = not(Number(a), Number(b));
+    res.json(`Resultado: ${resultado}`);
+});
+
+app.get("/or/:a/:b", (req, res) => {
+    const { a, b } = req.params;
+    const resultado = or(Number(a), Number(b));
+    res.json(`Resultado: ${resultado}`);
+});
+
+//------------------
+// RELACIONAIS
+
+app.get("/diferente/:a/:b", (req, res) => {
+    const { a, b } = req.params;
+    const resultado = diferente(Number(a), Number(b));
+    res.json(`Resultado: ${resultado}`);
+});
+
+app.get("/igual/:a/:b", (req, res) => {
+    const { a, b } = req.params;
+    const resultado = igual(Number(a), Number(b));
+    res.json(`Resultado: ${resultado}`);
+});
+
+app.get("/maior/:a/:b", (req, res) => {
+    const { a, b } = req.params;
+    const resultado = maior(Number(a), Number(b));
+    res.json(`Resultado: ${resultado}`);
+});
+
+app.get("/maiorigual/:a/:b", (req, res) => {
+    const { a, b } = req.params;
+    const resultado = maiorIgual(Number(a), Number(b));
+    res.json(`Resultado: ${resultado}`);
+});
+
+app.get("/menor/:a/:b", (req, res) => {
+    const { a, b } = req.params;
+    const resultado = menor(Number(a), Number(b));
+    res.json(`Resultado: ${resultado}`);
+});
+
+app.get("/menorigual/:a/:b", (req, res) => {
+    const { a, b } = req.params;
+    const resultado = menorIgual(Number(a), Number(b));
+    res.json(`Resultado: ${resultado}`);
+});
+
+//------------------
+// VETORES
+
+app.get("/acumular/:a/:b", (req, res) => {
+    const { a, b } = req.params;
+    const resultado = acumular(Number(a), Number(b));
+    res.json(`Resultado: ${resultado}`);
+});
+
+app.get("/adicionar/:a/:b", (req, res) => {
+    const { a, b } = req.params;
+    const resultado = adicionar(Number(a), Number(b));
+    res.json(`Resultado: ${resultado}`);
+});
+
+app.get("/buscar/:a/:b", (req, res) => {
+    const { a, b } = req.params;
+    const resultado = buscar(Number(a), Number(b));
+    res.json(`Resultado: ${resultado}`);
+});
+
+app.get("/remover/:a/:b", (req, res) => {
+    const { a, b } = req.params;
+    const resultado = remover(Number(a), Number(b));
+    res.json(`Resultado: ${resultado}`);
+});
+
+//------------------
+
 app.listen(3000, () => {
     console.log("Servidor rodando na porta 3000");
-
-app.get("/soma", (req, res) => {
-    const resultado = soma(10, 2);
-    res.json(`Resultado: ${resultado}`);
-});
-
-app.get("/dividir", (req, res) => {
-    const resultado = divisao(10, 2);
-    res.json(`Resultado: ${resultado}`);
-});
-
-app.get("/multiplicacao", (req, res) => {
-    const resultado = multiplicacao(10, 2);
-    res.json(`Resultado: ${resultado}`);
-});
-app.get("/potencia", (req, res) => {
-    const resultado = potencia(10, 2);
-    res.json(`Resultado: ${resultado}`);
-});
-app.get("/raiz", (req, res) => {
-    const resultado = raiz(10, 2);
-    res.json(`Resultado: ${resultado}`);
-});
-app.get("/resto", (req, res) => {
-    const resultado = resto(10, 2);
-    res.json(`Resultado: ${resultado}`);
-});
-app.get("/subtracao", (req, res) => {
-    const resultado = subtracao(10, 2);
-    res.json(`Resultado: ${resultado}`);
-});
-app.get("/ifcomposto", (req, res) => {
-    const resultado = ifComposto(10, 2);
-    res.json(`Resultado: ${resultado}`);
-});
-app.get("/ifsimples", (req, res) => {
-    const resultado = ifSimples(10, 2);
-    res.json(`Resultado: ${resultado}`);
-});
-app.get("/switchcase", (req, res) => {
-    const resultado = switchCase(10, 2);
-    res.json(`Resultado: ${resultado}`);
-});
-app.get("/ternario", (req, res) => {
-    const resultado = ternario(10, 2);
-    res.json(`Resultado: ${resultado}`);
-});
-app.get("/dowhile", (req, res) => {
-    const resultado = doWhile(10, 2);
-    res.json(`Resultado: ${resultado}`);
-});
-app.get("/foreach", (req, res) => {
-    const resultado = forEachFunc(10, 2);
-    res.json(`Resultado: ${resultado}`);
-});
-app.get("/forloop", (req, res) => {
-    const resultado = forLoop(10, 2);
-    res.json(`Resultado: ${resultado}`);
-});
-app.get("/map", (req, res) => {
-    const resultado = mapFunc(10, 2);
-    res.json(`Resultado: ${resultado}`);
-});
-app.get("/whileloop", (req, res) => {
-    const resultado = whileLoop(10, 2);
-    res.json(`Resultado: ${resultado}`);
-});
-app.get("/and", (req, res) => {
-    const resultado = and(10, 2);
-    res.json(`Resultado: ${resultado}`);
-});
-app.get("/not", (req, res) => {
-    const resultado = not(10, 2);
-    res.json(`Resultado: ${resultado}`);
-});
-
-app.get("/or", (req, res) => {
-    const resultado = or(10, 2);
-    res.json(`Resultado: ${resultado}`);
-});
-app.get("/diferente", (req, res) => {
-    const resultado = diferente(10, 2);
-    res.json(`Resultado: ${resultado}`);
-});
-app.get("/igual", (req, res) => {
-    const resultado = igual(10, 2);
-    res.json(`Resultado: ${resultado}`);
-});
-app.get("/maior", (req, res) => {
-    const resultado = maior(10, 2);
-    res.json(`Resultado: ${resultado}`);
-});
-app.get("/maiorigual", (req, res) => {
-    const resultado = maiorIgual(10, 2);
-    res.json(`Resultado: ${resultado}`);
-});
-app.get("/menor", (req, res) => {
-    const resultado = menor(10, 2);
-    res.json(`Resultado: ${resultado}`);
-});
-app.get("/menorigual", (req, res) => {
-    const resultado = menorIgual(10, 2);
-    res.json(`Resultado: ${resultado}`);
-});
-app.get("/acumular", (req, res) => {
-    const resultado = acumular(10, 2);
-    res.json(`Resultado: ${resultado}`);
-});
-app.get("/adicionar", (req, res) => {
-    const resultado = adicionar(10, 2);
-    res.json(`Resultado: ${resultado}`);
-});
-app.get("/buscar", (req, res) => {
-    const resultado = buscar(10, 2);
-    res.json(`Resultado: ${resultado}`);
-});
-app.get("/remover", (req, res) => {
-    const resultado = remover(10, 2);
-    res.json(`Resultado: ${resultado}`);
-});
-
 });
